@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div ng-app="resume">
+      <div>
+        <section ng-controller="PanelController as panel">
+          <ul class="nav nav-pills">
+            <li ng-class="{ active: panel.isSelected(1) }">
+              <a href="" ng-click="panel.selectTab(1)">Angular</a>
+            </li>
+            <li ng-class="{ active: panel.isSelected(2) }">
+              <a href="" ng-click="panel.selectTab(2)">Rails 3.2-4.0</a>
+            </li>
+            <li ng-class="{ active: panel.isSelected(3) }">
+              <a href="" ng-click="panel.selectTab(3)">RSpec for Rails</a>
+            </li>
+            <li ng-class="{ active: panel.isSelected(4) }">
+              <a href="" ng-click="panel.selectTab(4)">Testing for Rails</a>
+            </li>
+          </ul>
+         <div class="panel" ng-show="panel.isSelected(1)">
+           <h4>Angular</h4>
+         </div>
+         <div class="panel" ng-show="panel.isSelected(2)">
+           <h4>Ruby on Rails</h4>
+         </div>
+         <div class="panel" ng-show="panel.isSelected(3)">
+           <h4>RSpec</h4>
+         </div>
+         <div class="panel" ng-show="panel.isSelected(4)">
+           <h4>Testing</h4>
+         </div>
+       </section>  
+      </div>
+   </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    
+  </body>
+</html>
