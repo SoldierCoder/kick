@@ -1,5 +1,5 @@
 (function () {
-  var app = angular.module('resume', [ ]);
+  var app = angular.module('resume', ['angularjs-gravatardirective']);
 
   var badges = [
     {
@@ -64,10 +64,12 @@
     }  
   ]; 
   app.controller('ResumeController', function() {
+    $scope.email = 'geekprogrammer.ed@gmail.com';
     this.items = badges;
   });
 
   app.controller('PanelController', function() {
+    this.items = badges;
     this.tab = 1;
 
     this.selectTab = function(setTab) {

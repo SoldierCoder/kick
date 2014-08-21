@@ -8,7 +8,7 @@
 
     <!-- Bootstrap -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,46 +17,44 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <div ng-app="resume">
-      <div>
-        <section ng-controller="PanelController as panel">
-          <ul class="nav nav-pills">
-            <li ng-class="{ active: panel.isSelected(1) }">
-              <a href="" ng-click="panel.selectTab(1)">Angular</a>
-            </li>
-            <li ng-class="{ active: panel.isSelected(2) }">
-              <a href="" ng-click="panel.selectTab(2)">Rails 3.2-4.0</a>
-            </li>
-            <li ng-class="{ active: panel.isSelected(3) }">
-              <a href="" ng-click="panel.selectTab(3)">RSpec for Rails</a>
-            </li>
-            <li ng-class="{ active: panel.isSelected(4) }">
-              <a href="" ng-click="panel.selectTab(4)">Testing for Rails</a>
-            </li>
-          </ul>
-         <div class="panel" ng-show="panel.isSelected(1)">
-           <h4>Angular</h4>
-         </div>
-         <div class="panel" ng-show="panel.isSelected(2)">
-           <h4>Ruby on Rails</h4>
-         </div>
-         <div class="panel" ng-show="panel.isSelected(3)">
-           <h4>RSpec</h4>
-         </div>
-         <div class="panel" ng-show="panel.isSelected(4)">
-           <h4>Testing</h4>
-         </div>
-       </section>  
+  <body ng-app='resume'>
+  
+    <div class="container pull-left">
+      <div class="row">
+        <div class= "col-xs-1 pull-left"><h4>Experts</h4>
+          <img src='https://secure.gravatar.com/avatar/688ae188d5c1adf95968d0e6d9615962'>
+          <br>
+          Ed Drain
+        </div>
+        
+        <div>
+          <div ng-class="col-xs-11 pull-right">
+            <section ng-class="pull-right" ng-controller="PanelController as panel">
+              <ul class="nav nav-pills">
+                <li ng-repeat="item in panel.items" ng-class="{ active: panel.isSelected($index+1) }">
+                  <a href="" ng-click="panel.selectTab($index+1)">{{item.title}}</a>
+                </li>
+                
+              </ul>
+              <div ng-repeat="item in panel.items"> 
+                <div class="panel col-xs-11 pull-right" ng-show="panel.isSelected($index+1)">
+                  <h4>{{item.title}}</h4>
+                </div>
+              </div>
+            </section>  
+          </div>
+        </div>
       </div>
-   </div>
+    </div>
+    
+        
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js">
-    </script>
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>    
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="bower_components/angularjs-gravatardirective/dist/angularjs-gravatardirective.min.js"></script>
     
   </body>
 </html>
