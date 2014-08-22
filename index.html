@@ -19,34 +19,38 @@
   </head>
   <body ng-app='resume'>
   
-    <div class="container pull-left">
-      <div class="row">
-        <div class= "col-xs-1 pull-left"><h4>Experts</h4>
+    <div class='container-fluid'>
+      <div class='row-fluid'>
+        <div class='row'>
+          <div class='col-xs-1 col-md-1'
+          <!--Sidebar content-->
+          Experts<br>
           <img src='https://secure.gravatar.com/avatar/688ae188d5c1adf95968d0e6d9615962'>
           <br>
           Ed Drain
         </div>
-        
-        <div>
-          <div ng-class="col-xs-11 pull-right">
-            <section ng-class="pull-right" ng-controller="PanelController as panel">
-              <ul class="nav nav-pills">
-                <li ng-repeat="item in panel.items" ng-class="{ active: panel.isSelected($index+1) }">
-                  <a href="" ng-click="panel.selectTab($index+1)">{{item.title}}</a>
-                </li>
-                
-              </ul>
-              <div ng-repeat="item in panel.items"> 
-                <div class="panel col-xs-11 pull-right" ng-show="panel.isSelected($index+1)">
-                  <h4>{{item.title}}</h4>
-                </div>
+        <div class='col-xs-11 col-md-11'>
+          <!--Body content-->
+          <section ng-class="pull-right" ng-controller="PanelController as panel">
+            <ul class="nav nav-pills">
+              <li ng-repeat="item in panel.items" ng-class="{ active: panel.isSelected($index+1) }">
+                <a href="" ng-click="panel.selectTab($index+1)">{{item.title}}</a>
+              </li>
+          
+            </ul>
+            <div ng-repeat="item in panel.items"> 
+              <div class="panel pull-left" ng-show="panel.isSelected($index+1)">
+                <h4>{{item.title}}</h4>
               </div>
-            </section>  
-          </div>
-        </div>
+            </div>
+          </section>
+              
+        </div>  
       </div>
-    </div>
-    
+      
+     </div>
+   
+
         
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
